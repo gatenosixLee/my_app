@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body role="document">
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <div class="container theme-showcase" role="main">
+    <div class="page-header">
+      <h3><%= data.title %></h3>
+    </div>
+      <div class="time">Created at <br>
+        <%= data.createdAt.toLocaleDateString() %> <br>
+        <%= data.createdAt.toLocaleTimeString() %>
+      </div>
+      <% if(data.updatedAt) { %>
+        <div class="time">Updated At <br>
+          <%= data.updatedAt.toLocaleDateString() %> <br>
+          <%= data.updatedAt.toLocaleTimeString() %>
+        </div>
+      <% } %>
+      <div class="well">
+        <p><%= data.body %></p>
+      </div>
+      <span class="tools">
+        <form class="btn_delete" action="/posts/<%= data._id %>?_method=delete" method="post">
+        <a href="/posts/<%= data._id %>/edit"><button type="button" class="btn btn-default" name="button">Edit</button></a>
+        <!-- Delete Button here -->
+
+          <button type="submit" class="btn btn-danger" name="button">Delete</button>
+        </form>
+      </span>
+      <a href="/posts"><button type="button" name="button">Back</button></a>
+      <!-- main start -->
+
+
+      <!-- main end -->
+    </div> <!-- posts end -->
+
+
+      <% include ../partials/footer %>
+
+  </body>
+</html>
