@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/gatenosixLee/my_app#readme",
   "dependencies": {
-    "express": "^4.13.3"
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "mongoose": "^4.3.4"
   }
 }
